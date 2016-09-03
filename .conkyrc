@@ -1,0 +1,77 @@
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_class Conky
+own_window_title OneLine under Tint2
+
+double_buffer yes
+
+own_window_argb_visual yes
+own_window_type desktop
+
+minimum_size 1580 17     ## width, height
+maximum_width 1580       ## width, usually a good idea to equal minimum width
+
+gap_x 5 # left-right
+gap_y 3 # up-down
+
+alignment top_left
+# Use Xft (anti-aliased font and stuff)
+use_xft yes
+ xftfont Monaco:Bold:size=8
+xftalpha 0
+override_utf8_locale yes
+
+draw_shades no
+default_shade_color black
+
+draw_outline no # amplifies text if yes
+default_outline_color black
+
+uppercase no
+default_shade_color grey
+default_outline_color black
+
+default_color DCDCDC #Gainsboro
+color0 DAA520 #Goldenrod  FFFFF0 #Ivory
+color1 778899 #LightSlateGrey
+color2 FF8C00 #Darkorange
+color3 7FFF00 #Chartreuse
+color4 FFA07A #LightSalmon
+color5 FFDEAD #NavajoWhite
+color6 00BFFF #DeepSkyBlue
+color7 00FFFF #Cyan 48D1CC #MediumTurquoise
+color8 FFFF00 #Yellow
+color9 FF0000 #Red
+
+draw_borders no
+stippled_borders 0
+border_inner_margin 0
+border_outer_margin 0
+border_width 0
+# graph borders
+draw_graph_borders no
+
+background no
+
+use_spacer none
+
+text_buffer_size 1028
+
+no_buffers yes
+
+short_units yes
+
+pad_percents 2
+
+update_interval 1
+
+TEXT
+  \
+ ${color1}dekstop [ ${desktop_name} ]${color}\
+ ${color4}cpu ${cpubar 10, 100}\
+  ${color7}memory [ ${mem} ]\
+ ${color3}volume [ ${execi 2 amixer -c 1 get Master | grep "Mono:" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}% ]\
+ ${color2}battery [ bat1: ${execi 60 acpi -b | grep "Battery 0:" | awk '{print $4}'} bat2: ${execi 60 acpi -b | grep "Battery 1:" | awk '{print $4}'} ]\
+ ${goto 1372} ${color3}time ${execi 30 date +"[ %H:%M %a %e.%m.%y ]"}\
