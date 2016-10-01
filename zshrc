@@ -82,6 +82,7 @@ compinit
 #
 # Example aliases
 alias ls="ls -F --color=auto"
+alias lsa="ls -a --group-directories-first"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias py3='python3.5'
