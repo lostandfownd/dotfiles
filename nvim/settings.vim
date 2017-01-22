@@ -1,7 +1,9 @@
 " Set color scheme
-let g:seoul256_background = 235
-colo seoul256
-hi Normal ctermbg=none
+" let g:seoul256_background = 235
+" colo seoul256
+" hi Normal ctermbg=none
+
+colo solarized
 
 set relativenumber number " use relative numbers with the current line showing the current line number
 set tabstop=2
