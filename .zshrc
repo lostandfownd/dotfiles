@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/krom/.oh-my-zsh
+# export PATH="$PATH:`yarn global bin`"
 
 ZSH_THEME="spaceship"
 
@@ -23,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -60,16 +61,16 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
-export SSH_KEY_PATH="~/.ssh/everymatrix"
+export SSH_KEY_PATH="~/.ssh/em"
 eval `dircolors /home/krom/dotfiles/dircolors.moonshine`
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
@@ -88,5 +89,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias py3='python3.5'
 alias py2='python2.7'
 alias untar='tar -xvzf'
-alias files='pantheon-files'
 alias vim='nvim'
+alias img='feh -g 800x600 -d'
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
