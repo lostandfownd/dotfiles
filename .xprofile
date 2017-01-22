@@ -1,0 +1,5 @@
+compton -c --shadow-exclude 'class_g ?= "Notify-osd"' --fading &
+sleep 1 &
+setxkbmap -option caps:escape &
+xset s off &
+devmon &
