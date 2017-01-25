@@ -5,3 +5,19 @@ Xft.hintstyle: hintslight
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:f0393939, argb:0393939, argb:0393939
+rofi.color-normal: argb:0393939, #c9c9c9, argb:0393939, argb:0393939, #00f5a8
+rofi.color-active: argb:0393939, #ffb100, argb:0393939, argb:0393939, #00f5a8
+rofi.color-urgent: argb:0393939, #dc322f, argb:0393939, #dc322f, #fdf6e3
+rofi.padding: 400
+rofi.width: 1605
+rofi.font: Monaco for Powerline Bold 12
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.fake-transparency: true
+rofi.fake-background: $HOME/Pictures/wall.png

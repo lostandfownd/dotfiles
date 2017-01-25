@@ -41,12 +41,13 @@ font-0 = Roboto:pixelsize=10:bold
 font-1 = unifont:fontformat=truetype:size=6:heavy;-2
 font-2 = Wuncon Siji:pixelsize=10
 font-3 = FontAwesome:pixelsize=14;0
+font-4 = Monaco:pixelsize=10:bold
 
 modules-left = i3
 modules-center =
-modules-right = xbacklight volume memory wlan cpu battery temperature date
+modules-right = xbacklight volume memory wlan cpu wattage avg-battery date lock
 
-tray-position =
+tray-position = right
 tray-padding = 2
 
 [module/filesystem]
@@ -157,7 +158,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %gb_used%
@@ -194,14 +195,14 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d/%m/%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+;format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -279,5 +280,23 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+[module/lock]
+type = custom/ipc
+format = 
+hook-0 = dm-tool lock
+click-left = polybar-msg -p %pid% hook lock 1
+
+[module/avg-battery]
+type = custom/script
+exec = "count=$(acpi -b | wc -l); sum=$(acpi -b | grep -P -o '[0-9]+(?=%)' | tr -d '%' | xargs -I% echo -n '+%'); echo  $(( sum / count ))%"
+format-underline = #ffa500
+interval = 5
+
+[module/wattage]
+type = custom/script
+exec = $HOME/.scripts/wattage.sh
+format-underline = #08af13
+interval = 5
 
 ; vim:ft=dosini
