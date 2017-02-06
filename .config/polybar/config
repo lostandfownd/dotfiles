@@ -33,6 +33,7 @@ border-bottom-size = 0
 border-bottom-color = #333
 
 padding-left = 0
+padding-top = 8
 padding-right = 6
 module-margin-left = 2
 module-margin-right = 4
@@ -45,7 +46,7 @@ font-4 = Monaco:pixelsize=10:bold
 
 modules-left = i3
 modules-center =
-modules-right = xbacklight volume memory wlan cpu wattage avg-battery date lock
+modules-right = xbacklight volume pkg memory wlan vpncheck cpu wattage avg-battery date lock
 
 tray-position = right
 tray-padding = 2
@@ -168,13 +169,23 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected =  <label-connected>
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
 format-disconnected-underline = ${self.format-connected-underline}
 
-label-connected = %essid%
+label-connected = "%{A1:nm-connection-editor:} %essid%%{A}"
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
+click-left = polybar-msg -p %pid% hook wlan 1
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = #268bd2
+format-prefix = " "
+format-prefix-foreground = #5b
 
 [module/eth]
 type = internal/network
@@ -190,21 +201,28 @@ format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = #dc322f
+label = "%output:0:30%"
+exec = $HOME/.config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+
 [module/date]
 type = internal/date
-interval = 5
-
-date =
-date-alt = " %d/%m/%Y"
-
+interval = 1
+date = %Y-%m-%d %A
 time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix =
+label =   %time%
 format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
+format-underline = #0a6cf5
 
-label = %date% %time%
+[module/longdate]
+inherit = module/date
+label =  %date%  %time%
 
 [module/volume]
 type = internal/volume
@@ -213,9 +231,8 @@ format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -284,7 +301,7 @@ ramp-foreground = ${colors.foreground-alt}
 [module/lock]
 type = custom/ipc
 format = 
-hook-0 = dm-tool lock
+hook-0 = /usr/local/bin/lock
 click-left = polybar-msg -p %pid% hook lock 1
 
 [module/avg-battery]

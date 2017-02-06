@@ -24,7 +24,7 @@ set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
 # launcher
-bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+space exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -61,8 +61,8 @@ set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6:  "
 set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws8 "8: "
+set $ws9 "9: "
 set $ws10 "10: "
 
 # switch to workspace
@@ -123,6 +123,8 @@ client.focused_inactive #3e3e3e #3e3e3e #3e3e3e #3e3e3e
 client.focused #dddddd #dddddd #dddddd #dddddd
 client.urgent #3e3e3e #3e3e3e #3e3e3e #3e3e3e
 
+bindsym $mod+Tab workspace next
+
 # add a 3px border to all windows.
 for_window [class="^.*"] border pixel 3
 
@@ -143,6 +145,10 @@ for_window [instance="^file_progress"] floating enable
 for_window [window_role="About"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_role="^Manager"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Pinta"] floating enable
+for_window [window_role="pop-up"] floating enable
 
 # Pulseaudio Keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
