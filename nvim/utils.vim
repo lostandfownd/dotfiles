@@ -17,5 +17,3 @@ if exists("+undofile")
   set undodir+=~/.nvim/undo//
   set undofile
 endif
-
-

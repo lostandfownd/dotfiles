@@ -13,28 +13,32 @@ call dein#begin('/home/krom/.dein')
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
+" themes
+call dein#add('junegunn/seoul256.vim')
+
+" autocompletes
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
-call dein#add('mtth/scratch.vim')
-call dein#add('scrooloose/nerdtree')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('tpope/vim-commentary')
-call dein#add('tpope/vim-surround')
-call dein#add('junegunn/seoul256.vim')
-call dein#add('vim-airline/vim-airline')
-call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('carlitux/deoplete-ternjs')
-call dein#add('mhartington/deoplete-typescript')
-call dein#add('leafgarland/typescript-vim')
-call dein#add('pangloss/vim-javascript')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('Raimondi/delimitMate')
+
+" snippets
 call dein#add('SirVer/ultisnips')
 call dein#add('honza/vim-snippets')
-call dein#add('isRuslan/vim-es6')
+
+" utils
+call dein#add('tpope/vim-commentary')
+call dein#add('tpope/vim-surround')
+call dein#add('vim-airline/vim-airline')
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('Raimondi/delimitMate')
+call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
-call dein#add('frankier/neovim-colors-solarized-truecolor-only')
+
+" syntax
+call dein#add('isRuslan/vim-es6')
+"call dein#add('leafgarland/typescript-vim')
+call dein#add('pangloss/vim-javascript')
+call dein#add('posva/vim-vue')
 
 " Required:
 call dein#end()
