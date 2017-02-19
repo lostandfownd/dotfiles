@@ -31,15 +31,6 @@ let NERDTreeMapActivateNode='<CR>'
 " viminfo stores the the state of your previous editing session
 set viminfo+=n~/.nvim/viminfo
 
-" airline settings
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_fugitive_prefix = '⭠'
-let g:airline_readonly_symbol = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
-
 " delimitMate settings
 let delimitMate_expand_cr=1
 
@@ -64,3 +55,10 @@ let g:tern#filetypes = [
   \ 'javascript.jsx',
   \ 'vue'
   \ ]
+
+" syntastic
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = []

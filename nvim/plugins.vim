@@ -28,11 +28,12 @@ call dein#add('honza/vim-snippets')
 " utils
 call dein#add('tpope/vim-commentary')
 call dein#add('tpope/vim-surround')
-call dein#add('vim-airline/vim-airline')
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('Raimondi/delimitMate')
 call dein#add('scrooloose/nerdtree')
+call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
+"call dein#add('vim-syntastic/syntastic')
 
 " syntax
 call dein#add('isRuslan/vim-es6')

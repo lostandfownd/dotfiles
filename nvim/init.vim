@@ -13,3 +13,5 @@ runtime utils.vim
 " Load key bindings
 runtime keybindings.vim
 
+" Load lightline stuff
+runtime lightline_config.vim
