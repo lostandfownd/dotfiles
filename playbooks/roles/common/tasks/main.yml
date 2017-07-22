@@ -1,0 +1,27 @@
+---
+- name: Install prezto
+  git: repo=https://github.com/sorin-ionescu/prezto.git dest=~/.zprezto force=yes
+
+- name: Modify prezto theme colors
+  file: src=~/dotfiles/configs/promp_sorin_setup
+        dest=~/.zprezto/modules/prompt/functions/prompt_sorin_setup
+        force=yes
+
+- name: Symlink dotfiles
+  file: src=~/dotfiles/home/{{ item }}
+        dest=~/{{ item }}
+        state=link
+        force=yes
+  with_items:
+    - .zpreztorc
+    - .zlogin
+    - .zlogout
+    - .gitignore
+
+- name: Install dein
+  shell: $(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.dein
+
+- name: Install/Update neovim plugins
+  copy:
+    src: ~/dotfiles/home/.config/nvim
+    dest: ~/.config/nvim

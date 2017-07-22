@@ -1,0 +1,39 @@
+---
+- name: Install homebrew
+  shell: 'yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  args:
+    creates: /usr/local/bin/brew
+
+- name: Update Homebrew
+  homebrew: update_homebrew=yes
+
+- name: Install libraries with Homebrew
+  homebrew: name={{ item }} state=latest
+  with_items:
+    - ack
+    - git
+    - neovim
+    - nmap
+    - watch
+    - python
+    - python3
+    - wget
+    - node
+    - zsh
+    - httpie
+    - cask
+    - tree
+    - openssl
+    - curl
+    - htop
+
+- name: Install apps with Homebrew Cask
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - sublime-text
+    - vlc
+    - appcleaner
+    - aerial
+
+- name: Cleanup Brew packages
+  command: brew cleanup
