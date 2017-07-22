@@ -1,5 +1,0 @@
-compton -c --shadow-exclude 'class_g ?= "Notify-osd"' --fading --focus-exclude 'class_g = "Chromium-browser"' &
-sleep 1 &
-setxkbmap -option caps:escape &
-xset s off &
-devmon &
