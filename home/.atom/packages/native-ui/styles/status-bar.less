@@ -1,0 +1,49 @@
+@import "syntax-variables";
+
+status-bar {
+  box-shadow: 0 -1px 0 rgba(0,0,0, 0.15); // imitates border top
+  background-image: linear-gradient(to top, @status-bar-background-color, #EDEBED);
+  height: 28px;
+  line-height: 20px;
+
+  .is-blurred & {
+    opacity: @opacity-blurred;
+  }
+
+  .status-bar-right,
+  .status-bar-left {
+    padding-top: @component-padding/3;
+  }
+}
+
+status-bar .status-bar-right > *,
+status-bar .status-bar-left > * {
+  padding: 0 @component-padding;
+  border-radius: @border-radius--base;
+
+  &:hover:not(busy-signal) {
+    text-decoration: none;
+  }
+
+  // Rules for everything except the git-view
+  &:hover:not(.git-view):not(busy-signal):not(.linter-status-count):not(status-bar-launch-mode):not(status-bar-selection) {
+    color: @text-color-selected;
+    background-color: darken(@tab-background-color, 5%);
+    cursor: pointer;
+
+    a,
+    span {
+      color: @text-color-selected;
+    }
+  }
+}// status-bar .status-bar-right a.inline-block
+
+status-bar-cursor .inline-block,
+status-bar-selection .inline-block {
+  margin-right: 0; // since it’s the only item we don’t want it to align nicely
+}
+
+// Don’t show underlines when hovering over links
+status-bar a:hover {
+  text-decoration: none;
+}

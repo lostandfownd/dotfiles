@@ -1,0 +1,35 @@
+"*":
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    confirmCompletion: "enter"
+    useCoreMovementCommands: false
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "deprecation-cop"
+      "git-diff"
+      "tabs"
+    ]
+    packagesWithKeymapsDisabled: [
+      "autocomplete-plus"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "native-ui"
+      "one-dark-syntax"
+    ]
+  docblockr: {}
+  editor:
+    fontFamily: "OperatorMono-Book"
+    invisibles:
+      space: " "
+    showInvisibles: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "0b99fe40-6d0b-478c-afff-651f7fbb63e7"
+  "file-watcher":
+    promptWhenChange: true
+  "status-bar":
+    isVisible: false
+  welcome:
+    showOnStartup: false

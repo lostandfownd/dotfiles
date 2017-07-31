@@ -1,0 +1,72 @@
+.preview-pane .preview-header {
+  padding: @component-padding * 2 @component-padding ;
+  font-size: 1.75em;
+  font-weight: bold;
+  background-color: @base-background-color;
+  font-family: @font-family-headlines;
+  border-bottom: none; // ow
+  width: 100%;
+  z-index: 1;
+
+  .preview-controls {
+    font-family: @font-family;
+  }
+}
+
+.results-view .list-tree > div {
+  background-color: @input-background-color;
+  border-bottom: 1px solid @base-border-color;
+
+  &:first-child {
+    border-top: 1px solid @base-border-color;
+  }
+}
+
+.results-view .list-tree.has-collapsable-children {
+  padding: 0;
+}
+
+.preview-pane .results-view .selected {
+  > .line-number,
+  > .preview,
+  > .path-details.list-item,
+  .path-match-number {
+    color: @text-color-selected !important;
+  }
+
+  .path-match-number {
+    opacity: 0.65;
+  }
+}
+
+.preview-pane .results-view .selected .line-number {
+  color: @text-color-subtle;
+}
+
+// Increase distance to search result in code
+.preview-pane .results-view .line-number {
+  margin-right: 1rem;
+}
+
+// Name of the file the search result was found in
+.results-view .path-details.list-item {
+  padding: 0 @component-padding;
+}
+
+.results-view .selected > .path-details.list-item {
+  &:hover {
+    background-color: darken(@background-color-selected, 5%);
+  }
+}
+
+// Don’t indent the list items
+.results-view .list-tree.has-collapsable-children li.list-item {
+  margin-left: 0;
+}
+
+.results-view .search-result.list-item,
+.results-view .path-details.list-item {
+  &:hover {
+    background-color: darken(@base-background-color, 3%);
+  }
+}

@@ -1,0 +1,19 @@
+status-bar-git {
+  background-color: @background-git-view;
+
+  &:hover {
+    background-color: @background-git-view !important;
+  }
+}
+
+status-bar .status-bar-right .git-view .inline-block {
+  color: @text-color-selected;
+}
+
+status-bar .inline-block + .git-view {
+  margin-left: @component-padding;
+}
+
+status-bar-git .git-branch.inline-block {
+  margin-left: 0;
+}
