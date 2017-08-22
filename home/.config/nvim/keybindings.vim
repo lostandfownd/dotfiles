@@ -12,6 +12,10 @@ nnoremap k gk
 nnoremap ; :
 nmap <silent> ,/ :nohlsearch<CR>
 
+" Map ; to : to avoid mistakes
+nnoremap ; :
+nmap <silent> ,/ :nohlsearch<CR>
+
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv

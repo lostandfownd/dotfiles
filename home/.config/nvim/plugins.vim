@@ -15,11 +15,17 @@ call dein#add('Shougo/dein.vim')
 " Add or remove your plugins here:
 " themes
 call dein#add('junegunn/seoul256.vim')
+call dein#add('altercation/vim-colors-solarized')
 
 " autocompletes
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
 call dein#add('carlitux/deoplete-ternjs')
+call dein#add('hashivim/vim-terraform')
+
+" snippets
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
 
 " utils
 call dein#add('tpope/vim-commentary')
@@ -29,10 +35,14 @@ call dein#add('Raimondi/delimitMate')
 call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
+"call dein#add('vim-syntastic/syntastic')
 
 " syntax
 call dein#add('isRuslan/vim-es6')
+"call dein#add('leafgarland/typescript-vim')
 call dein#add('pangloss/vim-javascript')
+" call dein#add('posva/vim-vue')
+call dein#add('pearofducks/ansible-vim')
 
 " Required:
 call dein#end()

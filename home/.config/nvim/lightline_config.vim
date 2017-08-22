@@ -20,6 +20,7 @@ let g:lightline = {
       \ 'component_type': {
       \   'syntastic': 'error',
       \ },
+      \ 'separator': { 'left': '', 'right': '' },
       \ }
 
 function! LightlineModified()

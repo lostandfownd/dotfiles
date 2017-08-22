@@ -28,8 +28,8 @@ bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M vicmd "//" history-beginning-search-backward
 bindkey -M vicmd "??" history-beginning-search-forward
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/vladimiriacob/GCloudSDK/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/vladimiriacob/GCloudSDK/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/vladimiriacob/GCloudSDK/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/vladimiriacob/GCloudSDK/google-cloud-sdk/completion.zsh.inc'; fi
+# Aliases
+alias perfmon="sudo nvram boot-args='serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)'"
+alias perfoff="sudo nvram boot-args='$(nvram boot-args 2>/dev/null | sed -e $'s/boot-args\t//;s/serverperfmode=1//')'"
+alias lc="colorls"
+alias flushdns="sudo killall -HUP mDNSResponder"

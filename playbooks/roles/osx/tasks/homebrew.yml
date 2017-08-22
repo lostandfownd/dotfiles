@@ -10,30 +10,48 @@
 - name: Install libraries with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
-    - ack
+    - tig
+    - gettext
+    - graphviz
+    - fortune
     - git
-    - neovim
-    - nmap
+    - pv
+    - n
+    - tldr
+    - ranger
+    - zsh
+    - zsh-syntax-highlighting
     - watch
     - python
     - python3
     - wget
     - node
-    - zsh
     - httpie
     - cask
     - tree
     - openssl
+    - ack
+    - nmap
     - curl
     - htop
 
 - name: Install apps with Homebrew Cask
   homebrew_cask: name={{ item }} state=present
   with_items:
-    - sublime-text
     - vlc
-    - appcleaner
     - aerial
+    - google-chrome
+    - skype
+    - alfred
+    - docker
+    - virtualbox
+    - vagrant
+    - vagrant-manager
+    - dropbox
+    - flux
+    - spectacle
+    - radiant-player
+    - postman
 
 - name: Cleanup Brew packages
   command: brew cleanup
