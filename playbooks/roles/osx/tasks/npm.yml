@@ -1,0 +1,6 @@
+- name: Install npm packages
+  npm: name={{ item }}
+  with_items:
+    - yarn
+    - ternjs
+    - alfred-npms

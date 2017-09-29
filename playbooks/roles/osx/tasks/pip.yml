@@ -3,8 +3,10 @@
   pip: name={{ item }}
   with_items:
     - virtualenv
+    - howdoi
 
-- name: Install neovim-python sep
-  pip:
-    name: neovim
-    executable: pip3
+- name: Install pip3 pkgs
+  pip: name={{ item }} executable=pip3
+    with_items:
+      - asciinema
+      - neovim

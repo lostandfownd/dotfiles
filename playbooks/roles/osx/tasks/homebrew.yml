@@ -18,6 +18,7 @@
     - pv
     - n
     - tldr
+    - neovim
     - ranger
     - zsh
     - zsh-syntax-highlighting
@@ -52,6 +53,7 @@
     - spectacle
     - radiant-player
     - postman
+    - macdown
 
 - name: Cleanup Brew packages
   command: brew cleanup
