@@ -14,11 +14,7 @@
     - .gitignore
     - .zshrc
     - .config
+    - .gitconfig
 
 - name: Install dein
-  shell: $(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.dein
-
-- name: Install/Update neovim plugins
-  copy:
-    src: ~/dotfiles/home/.config/nvim
-    dest: ~/.config/nvim
+  raw: mkdir ~/.dein && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" ~/.dein
