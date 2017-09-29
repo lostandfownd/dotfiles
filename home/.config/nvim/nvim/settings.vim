@@ -1,6 +1,8 @@
 " Set color scheme
 let g:seoul256_background = 235
 colo seoul256
+" set background=dark
+" colo solarized
 hi LineNr ctermbg=235
 hi CursorLineNr ctermbg=235
 
@@ -35,11 +37,34 @@ set viminfo+=n~/.nvim/viminfo
 " delimitMate settings
 let delimitMate_expand_cr=1
 
+" ultiSnips settings
+let g:UltiSnipsUsePythonVersion = 3
+let g:ultisnips_python_style="google"
+
+" custom snips
+let g:UltiSnipsSnippetsDir = "~/.config/nvim/snips"
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snips"]
+
+" triggering
+let g:UltiSnipsExpandTrigger='<leader>w'
+let g:UltiSnipsJumpForwardTrigger='<leader>w'
+let g:UltiSnipsJumpBackwardTrigger='<leader>e'
+
 " ternjs
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = '0'
 let g:tern#filetypes = [
   \ 'jsx',
   \ 'javascript.jsx',
-  \ 'js'
+  \ 'vue'
   \ ]
+
+" syntastic
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = []
+
+" terraform
+let g:terraform_align=1
