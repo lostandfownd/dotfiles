@@ -7,6 +7,6 @@
 
 - name: Install pip3 pkgs
   pip: name={{ item }} executable=pip3
-    with_items:
-      - asciinema
-      - neovim
+  with_items:
+    - asciinema
+    - neovim
