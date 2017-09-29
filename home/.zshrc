@@ -31,5 +31,11 @@ bindkey -M vicmd "??" history-beginning-search-forward
 # Aliases
 alias perfmon="sudo nvram boot-args='serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)'"
 alias perfoff="sudo nvram boot-args='$(nvram boot-args 2>/dev/null | sed -e $'s/boot-args\t//;s/serverperfmode=1//')'"
-alias lc="colorls"
 alias flushdns="sudo killall -HUP mDNSResponder"
+alias npmglob="npm list -g --depth=0"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/vladimiriacob/Documents/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/vladimiriacob/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/vladimiriacob/Documents/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/vladimiriacob/Documents/google-cloud-sdk/completion.zsh.inc'; fi
