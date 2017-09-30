@@ -17,4 +17,4 @@
     - .gitconfig
 
 - name: Install dein
-  raw: mkdir ~/.dein && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" ~/.dein
+  raw: mkdir ~/.dein && curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash -s ~/.dein
