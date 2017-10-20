@@ -1,8 +1,14 @@
 " Set color scheme
+
+" Seoul256 - usual theme
 let g:seoul256_background = 235
 colo seoul256
 hi LineNr ctermbg=235
 hi CursorLineNr ctermbg=235
+
+" Github theme - presentation theme
+" colo github
+" hi LineNr ctermbg=15
 
 set relativenumber number " use relative numbers with the current line showing the current line number
 set tabstop=2

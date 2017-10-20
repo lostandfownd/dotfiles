@@ -14,6 +14,7 @@ call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('junegunn/seoul256.vim')
+call dein#add('ricardovaleriano/vim-github-theme')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
 call dein#add('carlitux/deoplete-ternjs')
@@ -27,6 +28,8 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('isRuslan/vim-es6')
 call dein#add('pangloss/vim-javascript')
+call dein#add('mhartington/nvim-typescript')
+call dein#add('HerringtonDarkholme/yats.vim')
 
 " Required:
 call dein#end()
