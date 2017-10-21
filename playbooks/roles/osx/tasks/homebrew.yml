@@ -2,6 +2,11 @@
 - name: Update Homebrew
   homebrew: update_homebrew=yes
 
+- name: Tap brew formulae
+  homebrew_tap: name={{ item }} state=present
+  with_items:
+    - crisidev/homebrew-chunkwm
+
 - name: Install libraries with Homebrew
   homebrew: name={{ item }} state=latest
   with_items:
@@ -31,6 +36,7 @@
     - curl
     - htop
     - fasd
+    - chunkwm
 
 - name: Install apps with Homebrew Cask
   homebrew_cask: name={{ item }} state=present
