@@ -36,7 +36,6 @@
     - curl
     - htop
     - fasd
-    - chunkwm
 
 - name: Install apps with Homebrew Cask
   homebrew_cask: name={{ item }} state=present
@@ -57,6 +56,10 @@
     - radiant-player
     - postman
     - macdown
+    - coconutbattery
+    - dash
+    - karabiner-elements
+    - viscosity
 
 - name: Cleanup Brew packages
   command: brew cleanup
