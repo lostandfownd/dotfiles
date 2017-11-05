@@ -36,6 +36,7 @@
     - curl
     - htop
     - fasd
+    - tmux
 
 - name: Install apps with Homebrew Cask
   homebrew_cask: name={{ item }} state=present

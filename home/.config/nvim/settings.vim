@@ -1,16 +1,20 @@
 " Set color scheme
-
-" Seoul256 - usual theme
-let g:seoul256_background = 235
 colo seoul256
-hi LineNr ctermbg=235
-hi CursorLineNr ctermbg=235
 
-" Github theme - presentation theme
-" colo github
-" hi LineNr ctermbg=15
+" " Some personal stuff
+set statusline=%=%P\ %f\ %m
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+set laststatus=2
+set noshowmode
 
-set relativenumber number " use relative numbers with the current line showing the current line number
+" True fucking colors
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+
+set nocursorline
+set relativenumber
+set signcolumn="yes"
+set regexpengine=1
 set tabstop=2
 set softtabstop=2
 set expandtab

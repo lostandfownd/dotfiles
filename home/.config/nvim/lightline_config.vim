@@ -14,12 +14,6 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \   'ctrlpmark': 'CtrlPMark',
       \ },
-      \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'component_type': {
-      \   'syntastic': 'error',
-      \ },
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ }
 
