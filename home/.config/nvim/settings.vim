@@ -13,7 +13,7 @@ set smartindent
 set mouse=a
 set termguicolors
 
-set statusline=%=&P\ %f\ %m
+set statusline=%=%P\ %f\ %m
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 set laststatus=2
 set noshowmode
