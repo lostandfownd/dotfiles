@@ -778,6 +778,12 @@
 	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>2FB2DDEB-900B-4691-ADBA-771E92088CF7</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<true/>
 	<key>DisableWindowSizeSnap</key>
 	<true/>
 	<key>EnableDivisionView</key>
@@ -793,7 +799,7 @@
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
-	<true/>
+	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>JobName</key>
@@ -840,14 +846,20 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1264 110 590 467 0 0 1920 1177 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>650 589 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>636 651 937 512 0 0 1920 1177 </string>
+	<string>300 245 918 485 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>135 81 1483 972 0 0 1920 1177 </string>
+	<string>0 10 1906 1167 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>Allow Title Reporting</key>
 			<false/>
@@ -1422,7 +1434,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>OperatorMonoLig-Book 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -2137,6 +2149,16 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>F657EBC2-65F2-48F0-B32D-ADD0AEA0E324</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+	<key>NoSyncSuppressBroadcastInputWarning</key>
+	<true/>
+	<key>NoSyncSuppressBroadcastInputWarning_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>531502410.28020602</real>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -2187,7 +2209,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-04T15:34:20Z</date>
+	<date>2017-11-22T18:35:23Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2221,7 +2243,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.4</string>
+	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

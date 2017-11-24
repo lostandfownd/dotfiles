@@ -1,18 +1,8 @@
 " Set color scheme
 colo seoul256
 
-" " Some personal stuff
-set statusline=%=%P\ %f\ %m
-set fillchars=vert:\ ,stl:\ ,stlnc:\
-set laststatus=2
-set noshowmode
-
-" True fucking colors
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-
 set nocursorline
-set relativenumber
+set relativenumber number
 set signcolumn="yes"
 set regexpengine=1
 set tabstop=2
@@ -21,6 +11,12 @@ set expandtab
 set shiftwidth=2
 set smartindent
 set mouse=a
+set termguicolors
+
+set statusline=%=&P\ %f\ %m
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+set laststatus=2
+set noshowmode
 
 " Custom invisibles
 set list

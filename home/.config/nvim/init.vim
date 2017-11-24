@@ -15,3 +15,6 @@ runtime keybindings.vim
 
 " Load colors stuff
 runtime colors.vim
+
+" lightline stuff
+" runtime lightline_config.vim
