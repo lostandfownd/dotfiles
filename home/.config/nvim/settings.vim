@@ -4,7 +4,7 @@ colo seoul256
 set nocursorline
 set relativenumber number
 set signcolumn="yes"
-set regexpengine=1
+" set regexpengine=1
 set tabstop=2
 set softtabstop=2
 set expandtab
@@ -41,11 +41,4 @@ set viminfo+=n~/.nvim/viminfo
 " delimitMate settings
 let delimitMate_expand_cr=1
 
-" ternjs
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = '0'
-let g:tern#filetypes = [
-  \ 'jsx',
-  \ 'javascript.jsx',
-  \ 'js'
-  \ ]
+let g:deoplete#enable_at_startup = 1

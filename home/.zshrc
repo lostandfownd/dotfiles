@@ -30,6 +30,16 @@ bindkey -M vicmd "??" history-beginning-search-forward
 
 eval "$(fasd --init auto)"
 
+# Functions
+function kubens() {
+  if [ "$1" != "" ] # or better, if [ -n "$1" ]
+    then
+        kubectl config set-context $(kubectl config current-context) --namespace="$1"
+    else
+      echo "No namespace specified"
+    fi
+}
+
 # Aliases
 alias perfmon="sudo nvram boot-args='serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)'"
 alias perfoff="sudo nvram boot-args='$(nvram boot-args 2>/dev/null | sed -e $'s/boot-args\t//;s/serverperfmode=1//')'"

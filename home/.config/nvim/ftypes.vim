@@ -7,3 +7,6 @@ augroup vagrant
   au!
   au BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
+
+au FileType python setl sw=4 sts=4
+au FileType go setl sw=4 sts=4
