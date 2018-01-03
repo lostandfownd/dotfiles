@@ -1,10 +1,10 @@
 " Set color scheme
 colo seoul256
+let g:airline_theme='deus'
 
 set nocursorline
 set relativenumber number
 set signcolumn="yes"
-" set regexpengine=1
 set tabstop=2
 set softtabstop=2
 set expandtab
@@ -12,11 +12,7 @@ set shiftwidth=2
 set smartindent
 set mouse=a
 set termguicolors
-
-set statusline=%=%P\ %f\ %m
-set fillchars=vert:\ ,stl:\ ,stlnc:\
-set laststatus=2
-set noshowmode
+set hidden
 
 " Custom invisibles
 set list
@@ -42,3 +38,29 @@ set viminfo+=n~/.nvim/viminfo
 let delimitMate_expand_cr=1
 
 let g:deoplete#enable_at_startup = 1
+
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" show tabs numbers
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" show custom tab numbers by airline
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffers_label = ''
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.notexists = ' '

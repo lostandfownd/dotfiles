@@ -1,10 +1,11 @@
-" disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+nnoremap k gk
+nnoremap j gj
+
+" remap arrow keys to resize
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 
 nnoremap <silent> + :exe "vertical resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "vertical resize " . (winheight(0) * 2/3)<CR>
@@ -23,11 +24,9 @@ vnoremap > >gv
 
 " Tab navigatin mappings
 map tn <Esc>:enew<CR>
-map tc <Esc>:tabclose<CR>
-map tf <Esc>:tabfirst<CR>
-map tp <Esc>:tabp<CR>
-map tx <Esc>:tabn<CR>
-map tl <Esc>:tablast<CR>
+map tx <Esc>:bprevious<CR>:bdelete #<CR>
+map tl <Esc>:bnext<CR>
+map th <Esc>:bprevious<CR>
 
 " split navigation
 nnoremap <C-h> <C-w>h
@@ -41,8 +40,8 @@ noremap <silent><leader>/ :nohls<CR>
 " fold html tag
 nnoremap <leader>ft Vatzf
 
-" deopelete kb
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" deoplete kb
+inoremap <expr><Tab> pumvisible() ? "\<C-R>" : "\<tab>"
 
 " open a new vertical split
 nnoremap <leader>w <C-w>v<C-w>l
@@ -54,11 +53,6 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_move_highlight = 0
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-sn)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
 nmap s <Plug>(easymotion-sn)
 
 " Turn on case insensitive feature
@@ -70,9 +64,21 @@ map <Leader>k <Plug>(easymotion-k)
 
 " tmux nav
 let g:tmux_navigator_no_mappings = 1
-
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+
+" airline idx tab nav
+nmap t1 <Plug>AirlineSelectTab1
+nmap t2 <Plug>AirlineSelectTab2
+nmap t3 <Plug>AirlineSelectTab3
+nmap t4 <Plug>AirlineSelectTab4
+nmap t5 <Plug>AirlineSelectTab5
+nmap t6 <Plug>AirlineSelectTab6
+nmap t7 <Plug>AirlineSelectTab7
+nmap t8 <Plug>AirlineSelectTab8
+nmap t9 <Plug>AirlineSelectTab9
+
+" make c-r smart on autocomplete
+inoremap <return> <C-R>=Ulti_ExpandOrEnter()<CR>

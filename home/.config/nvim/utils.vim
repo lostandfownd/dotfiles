@@ -18,6 +18,7 @@ if exists("+undofile")
   set undofile
 endif
 
+" keep fasd_nv in sync with ctrl-p
 function! s:fasd_update() abort
   if empty(&buftype) || &filetype ==# 'dirvish'
     call jobstart(['fasd', '-A', expand('%:p')])
@@ -27,3 +28,25 @@ augroup fasd
   autocmd!
   autocmd BufWinEnter,BufFilePost * call s:fasd_update()
 augroup END
+
+" open nerdtree if vim was started with no args
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+let g:ulti_expand_res = 0
+
+function! Ulti_ExpandOrEnter()
+  " try to expand ulti snippet
+  call UltiSnips#ExpandSnippet()
+  if g:ulti_expand_res
+    " done if success
+    return ''
+  elseif pumvisible()
+    " if in menu close the menu and finish the current completion
+    return deoplete#mappings#close_popup()
+  else
+    " otherwise "enter"
+    return "\<return>"
+  endif
+endfunction
